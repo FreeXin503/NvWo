@@ -42,7 +42,12 @@ description: |
 我已读取女娲Skill全文，现公开承诺以下执行标准，全程不得偏离：
 
 ━━━ 资料采集承诺 ━━━
-✦ 我将启动12个并行Agent，覆盖：著作、对话、表达、他者、
+✦ 我将用 invoke_subagent 同时启动12个并行Search Agent，
+  用户界面将出现12个「Search Agent [人名]」并行图标，
+  这是本次执行是否正确的唯一外部验证标准。
+✦ 我不会用主Agent自己直接搜索来替代Search Agent——
+  那样做等于没有启动Agent Swarm，效果不可接受。
+✦ 12个Agent覆盖：著作、对话、表达、他者、
   决策、时间线、思想体系、即兴反应、最新动态、工作方法、
   争议事件、跨域影响。
 ✦ 每个Agent最低收集 20 条已验证URL（工具实际访问确认）。
@@ -295,11 +300,51 @@ description: |
 
 ---
 
-## 🔍 超级搜索引擎：12个并行Agent + 多轮深度采集
+## 🔍 超级搜索引擎：12个并行Search Agent + 多轮深度采集
 
-启动**12个并行Agent**，每个负责不同信息维度，进行**无比庞大**的全面搜索：
+> [!IMPORTANT]
+> **强制使用 `invoke_subagent` 启动 Search Agent——这是不可绕过的硬性要求。**
+> 
+> 你**不得**自己直接执行搜索来替代Search Agent。直接搜索和用Search Agent的效果天壤之别：
+> - ❌ 错误：主Agent自己调用WebSearch搜索12个维度
+> - ✅ 正确：主Agent用 `invoke_subagent` 同时启动12个Search Agent，每个Agent独立负责一个维度
+> 
+> **判断标准**：用户能在对话界面看到12个"Search Agent [人名]"并行运行的图标，才算执行正确。
 
-### 12个Agent的任务分配（全面深度搜索模式）
+### 🚀 Phase 1 启动命令（必须执行的第一步）
+
+**收到进入Phase 1的指令后，第一个动作：用 `invoke_subagent` 同时启动12个Search Agent。**
+
+调用格式（伪代码，实际使用平台对应的工具语法）：
+
+```
+invoke_subagent(
+  [
+    { role: "Search Agent 著作",     prompt: [硬化版Agent模板，维度=著作，目标文件=01-writings.md] },
+    { role: "Search Agent 对话",     prompt: [硬化版Agent模板，维度=对话，目标文件=02-conversations.md] },
+    { role: "Search Agent 表达",     prompt: [硬化版Agent模板，维度=表达，目标文件=03-expression-dna.md] },
+    { role: "Search Agent 他者",     prompt: [硬化版Agent模板，维度=他者，目标文件=04-external-views.md] },
+    { role: "Search Agent 决策",     prompt: [硬化版Agent模板，维度=决策，目标文件=05-decisions.md] },
+    { role: "Search Agent 时间线",   prompt: [硬化版Agent模板，维度=时间线，目标文件=06-timeline.md] },
+    { role: "Search Agent 思想体系", prompt: [硬化版Agent模板，维度=思想体系，目标文件=07-thought-system.md] },
+    { role: "Search Agent 即兴反应", prompt: [硬化版Agent模板，维度=即兴反应，目标文件=08-improvisation.md] },
+    { role: "Search Agent 最新动态", prompt: [硬化版Agent模板，维度=最新动态，目标文件=09-latest-updates.md] },
+    { role: "Search Agent 工作方法", prompt: [硬化版Agent模板，维度=工作方法，目标文件=10-work-methods.md] },
+    { role: "Search Agent 争议事件", prompt: [硬化版Agent模板，维度=争议事件，目标文件=11-controversies.md] },
+    { role: "Search Agent 跨域影响", prompt: [硬化版Agent模板，维度=跨域影响，目标文件=12-cross-domain.md] },
+  ],
+  parallel=True   // 必须并行，不得串行
+)
+```
+
+**每个 Agent 的 prompt 使用下方「Agent prompt模板（硬化版）」章节中的完整模板，将 [当前Agent维度] 和 [NN-filename] 替换为对应值。**
+
+**启动12个Search Agent后，主Agent等待所有Agent完成（不要在等待期间自己另行搜索）。**
+
+---
+
+### 12个Search Agent的任务分配
+
 
 | Agent | 搜索目标 | 提取重点 | 输出文件 |
 |-------|---------|---------|---------|
