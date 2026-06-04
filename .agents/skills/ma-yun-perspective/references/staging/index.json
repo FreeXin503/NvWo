@@ -1,0 +1,68 @@
+[
+  {
+    "id": "a525d2781994",
+    "source": "搜索结果1",
+    "source_type": "file",
+    "title": "ma yun近期发表了关于持续学习的讲话，强调自我提升的重要性",
+    "date_hint": null,
+    "agents": [
+      "06-timeline"
+    ],
+    "agent_scores": {
+      "01-writings": 0.0,
+      "02-conversations": 0.0,
+      "03-expression-dna": 0.0,
+      "04-external-views": 0.0,
+      "05-decisions": 0.0,
+      "06-timeline": 0.0
+    },
+    "key_points": [],
+    "content_hash": "a525d2781994",
+    "content_preview": "ma yun近期发表了关于持续学习的讲话，强调自我提升的重要性",
+    "ingested_at": "2026-06-04T13:29:40.155055"
+  },
+  {
+    "id": "163cb604fb60",
+    "source": "搜索结果2",
+    "source_type": "file",
+    "title": "ma yun提出了新的思维框架，强调实践与理论的结合",
+    "date_hint": null,
+    "agents": [
+      "01-writings"
+    ],
+    "agent_scores": {
+      "01-writings": 0.058823529411764705,
+      "02-conversations": 0.0,
+      "03-expression-dna": 0.0,
+      "04-external-views": 0.0,
+      "05-decisions": 0.0,
+      "06-timeline": 0.0
+    },
+    "key_points": [],
+    "content_hash": "163cb604fb60",
+    "content_preview": "ma yun提出了新的思维框架，强调实践与理论的结合",
+    "ingested_at": "2026-06-04T13:29:40.158719"
+  },
+  {
+    "id": "84c6cb87e695",
+    "source": "搜索结果3",
+    "source_type": "file",
+    "title": "ma yun在最新活动中分享了人生经验和感悟",
+    "date_hint": null,
+    "agents": [
+      "06-timeline"
+    ],
+    "agent_scores": {
+      "01-writings": 0.0,
+      "02-conversations": 0.0,
+      "03-expression-dna": 0.0,
+      "04-external-views": 0.0,
+      "05-decisions": 0.0,
+      "06-timeline": 0.05555555555555555
+    },
+    "key_points": [],
+    "content_hash": "84c6cb87e695",
+    "content_preview": "ma yun在最新活动中分享了人生经验和感悟",
+    "ingested_at": "2026-06-04T13:29:40.167538"
+  }
+]

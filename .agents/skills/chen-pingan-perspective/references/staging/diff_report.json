@@ -1,6 +1,6 @@
 {
   "skill_name": "chen-pingan-perspective",
-  "generated_at": "2026-06-04T11:37:47.458644",
+  "generated_at": "2026-06-04T13:29:28.926626",
   "staging_materials": [
     {
       "id": "ac44940ee2df",
@@ -23,6 +23,33 @@
       "key_points": [
         "我陈平安，剑在手中，道在心中。"
       ]
+    },
+    {
+      "id": "2a0e3812ebf2",
+      "title": "chen pingan近期发表了关于持续学习的讲话，强调自我提升的重要性",
+      "source": "搜索结果1",
+      "agents": [
+        "06-timeline"
+      ],
+      "key_points": []
+    },
+    {
+      "id": "2e4c1b84c68c",
+      "title": "chen pingan提出了新的思维框架，强调实践与理论的结合",
+      "source": "搜索结果2",
+      "agents": [
+        "01-writings"
+      ],
+      "key_points": []
+    },
+    {
+      "id": "011d88a6eb60",
+      "title": "chen pingan在最新活动中分享了人生经验和感悟",
+      "source": "搜索结果3",
+      "agents": [
+        "06-timeline"
+      ],
+      "key_points": []
     }
   ],
   "per_agent": {
@@ -36,6 +63,13 @@
           "key_points": [
             "我陈平安，剑在手中，道在心中。不为天下，只求心安。"
           ]
+        },
+        {
+          "id": "2e4c1b84c68c",
+          "title": "chen pingan提出了新的思维框架，强调实践与理论的结合",
+          "source": "搜索结果2",
+          "date_hint": null,
+          "key_points": []
         }
       ],
       "new_entities": [
@@ -46,6 +80,11 @@
         {
           "type": "update",
           "new_text_snippet": "新的剑道境界。他说：「我陈平安，剑在手中，道在心中。不为天下，只求心安。」标志着他的思想从护天下转变为求心安。",
+          "description": "新素材含有update标记，可能挑战现有认知"
+        },
+        {
+          "type": "update",
+          "new_text_snippet": "新的思维框架，强调实践与理论的结合",
           "description": "新素材含有update标记，可能挑战现有认知"
         }
       ],
@@ -89,6 +128,20 @@
           "key_points": [
             "我陈平安，剑在手中，道在心中。"
           ]
+        },
+        {
+          "id": "2a0e3812ebf2",
+          "title": "chen pingan近期发表了关于持续学习的讲话，强调自我提升的重要性",
+          "source": "搜索结果1",
+          "date_hint": null,
+          "key_points": []
+        },
+        {
+          "id": "011d88a6eb60",
+          "title": "chen pingan在最新活动中分享了人生经验和感悟",
+          "source": "搜索结果3",
+          "date_hint": null,
+          "key_points": []
         }
       ],
       "new_entities": [
@@ -100,15 +153,20 @@
           "type": "update",
           "new_text_snippet": "新的剑道境界。他说：「我陈平安，剑在手中，道在心中。」",
           "description": "新素材含有update标记，可能挑战现有认知"
+        },
+        {
+          "type": "update",
+          "new_text_snippet": "最新活动中分享了人生经验和感悟",
+          "description": "新素材含有update标记，可能挑战现有认知"
         }
       ],
       "suggested_action": "review"
     }
   },
   "summary": {
-    "total_new_materials": 2,
+    "total_new_materials": 5,
     "total_new_entities": 2,
-    "total_conflicts": 2,
+    "total_conflicts": 4,
     "agents_with_changes": [
       "01-writings",
       "06-timeline"

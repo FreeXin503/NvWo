@@ -1,0 +1,68 @@
+[
+  {
+    "id": "3fcfd346b892",
+    "source": "搜索结果1",
+    "source_type": "file",
+    "title": "caizhixin近期发表了关于持续学习的讲话，强调自我提升的重要性",
+    "date_hint": null,
+    "agents": [
+      "06-timeline"
+    ],
+    "agent_scores": {
+      "01-writings": 0.0,
+      "02-conversations": 0.0,
+      "03-expression-dna": 0.0,
+      "04-external-views": 0.0,
+      "05-decisions": 0.0,
+      "06-timeline": 0.0
+    },
+    "key_points": [],
+    "content_hash": "3fcfd346b892",
+    "content_preview": "caizhixin近期发表了关于持续学习的讲话，强调自我提升的重要性",
+    "ingested_at": "2026-06-04T13:28:56.922214"
+  },
+  {
+    "id": "9f6fc5f54f61",
+    "source": "搜索结果2",
+    "source_type": "file",
+    "title": "caizhixin提出了新的思维框架，强调实践与理论的结合",
+    "date_hint": null,
+    "agents": [
+      "01-writings"
+    ],
+    "agent_scores": {
+      "01-writings": 0.058823529411764705,
+      "02-conversations": 0.0,
+      "03-expression-dna": 0.0,
+      "04-external-views": 0.0,
+      "05-decisions": 0.0,
+      "06-timeline": 0.0
+    },
+    "key_points": [],
+    "content_hash": "9f6fc5f54f61",
+    "content_preview": "caizhixin提出了新的思维框架，强调实践与理论的结合",
+    "ingested_at": "2026-06-04T13:28:56.924964"
+  },
+  {
+    "id": "e28d6d784260",
+    "source": "搜索结果3",
+    "source_type": "file",
+    "title": "caizhixin在最新活动中分享了人生经验和感悟",
+    "date_hint": null,
+    "agents": [
+      "06-timeline"
+    ],
+    "agent_scores": {
+      "01-writings": 0.0,
+      "02-conversations": 0.0,
+      "03-expression-dna": 0.0,
+      "04-external-views": 0.0,
+      "05-decisions": 0.0,
+      "06-timeline": 0.05555555555555555
+    },
+    "key_points": [],
+    "content_hash": "e28d6d784260",
+    "content_preview": "caizhixin在最新活动中分享了人生经验和感悟",
+    "ingested_at": "2026-06-04T13:28:56.933870"
+  }
+]

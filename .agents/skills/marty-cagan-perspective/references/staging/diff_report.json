@@ -1,0 +1,122 @@
+{
+  "skill_name": "marty-cagan-perspective",
+  "generated_at": "2026-06-04T13:29:42.463763",
+  "staging_materials": [
+    {
+      "id": "37055d0eff13",
+      "title": "marty cagan近期发表了关于持续学习的讲话，强调自我提升的重要性",
+      "source": "搜索结果1",
+      "agents": [
+        "06-timeline"
+      ],
+      "key_points": []
+    },
+    {
+      "id": "847d95f26f44",
+      "title": "marty cagan提出了新的思维框架，强调实践与理论的结合",
+      "source": "搜索结果2",
+      "agents": [
+        "01-writings"
+      ],
+      "key_points": []
+    },
+    {
+      "id": "e0b6c6c42a1d",
+      "title": "marty cagan在最新活动中分享了人生经验和感悟",
+      "source": "搜索结果3",
+      "agents": [
+        "06-timeline"
+      ],
+      "key_points": []
+    }
+  ],
+  "per_agent": {
+    "01-writings": {
+      "new_materials": [
+        {
+          "id": "847d95f26f44",
+          "title": "marty cagan提出了新的思维框架，强调实践与理论的结合",
+          "source": "搜索结果2",
+          "date_hint": null,
+          "key_points": []
+        }
+      ],
+      "new_entities": [],
+      "similar_passages": [],
+      "conflicts": [
+        {
+          "type": "update",
+          "new_text_snippet": "新的思维框架，强调实践与理论的结合",
+          "description": "新素材含有update标记，可能挑战现有认知"
+        }
+      ],
+      "suggested_action": "review"
+    },
+    "02-conversations": {
+      "new_materials": [],
+      "new_entities": [],
+      "similar_passages": [],
+      "conflicts": [],
+      "suggested_action": "skip"
+    },
+    "03-expression-dna": {
+      "new_materials": [],
+      "new_entities": [],
+      "similar_passages": [],
+      "conflicts": [],
+      "suggested_action": "skip"
+    },
+    "04-external-views": {
+      "new_materials": [],
+      "new_entities": [],
+      "similar_passages": [],
+      "conflicts": [],
+      "suggested_action": "skip"
+    },
+    "05-decisions": {
+      "new_materials": [],
+      "new_entities": [],
+      "similar_passages": [],
+      "conflicts": [],
+      "suggested_action": "skip"
+    },
+    "06-timeline": {
+      "new_materials": [
+        {
+          "id": "37055d0eff13",
+          "title": "marty cagan近期发表了关于持续学习的讲话，强调自我提升的重要性",
+          "source": "搜索结果1",
+          "date_hint": null,
+          "key_points": []
+        },
+        {
+          "id": "e0b6c6c42a1d",
+          "title": "marty cagan在最新活动中分享了人生经验和感悟",
+          "source": "搜索结果3",
+          "date_hint": null,
+          "key_points": []
+        }
+      ],
+      "new_entities": [],
+      "similar_passages": [],
+      "conflicts": [
+        {
+          "type": "update",
+          "new_text_snippet": "最新活动中分享了人生经验和感悟",
+          "description": "新素材含有update标记，可能挑战现有认知"
+        }
+      ],
+      "suggested_action": "review"
+    }
+  },
+  "summary": {
+    "total_new_materials": 3,
+    "total_new_entities": 0,
+    "total_conflicts": 2,
+    "agents_with_changes": [
+      "01-writings",
+      "06-timeline"
+    ],
+    "recommended_action": "review_and_apply"
+  }
+}

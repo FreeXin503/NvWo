@@ -1,0 +1,68 @@
+[
+  {
+    "id": "2552a23bd4b3",
+    "source": "搜索结果1",
+    "source_type": "file",
+    "title": "jeff bezos近期发表了关于持续学习的讲话，强调自我提升的重要性",
+    "date_hint": null,
+    "agents": [
+      "06-timeline"
+    ],
+    "agent_scores": {
+      "01-writings": 0.0,
+      "02-conversations": 0.0,
+      "03-expression-dna": 0.0,
+      "04-external-views": 0.0,
+      "05-decisions": 0.0,
+      "06-timeline": 0.0
+    },
+    "key_points": [],
+    "content_hash": "2552a23bd4b3",
+    "content_preview": "jeff bezos近期发表了关于持续学习的讲话，强调自我提升的重要性",
+    "ingested_at": "2026-06-04T13:29:33.384431"
+  },
+  {
+    "id": "3cdd9e5e0b17",
+    "source": "搜索结果2",
+    "source_type": "file",
+    "title": "jeff bezos提出了新的思维框架，强调实践与理论的结合",
+    "date_hint": null,
+    "agents": [
+      "01-writings"
+    ],
+    "agent_scores": {
+      "01-writings": 0.058823529411764705,
+      "02-conversations": 0.0,
+      "03-expression-dna": 0.0,
+      "04-external-views": 0.0,
+      "05-decisions": 0.0,
+      "06-timeline": 0.0
+    },
+    "key_points": [],
+    "content_hash": "3cdd9e5e0b17",
+    "content_preview": "jeff bezos提出了新的思维框架，强调实践与理论的结合",
+    "ingested_at": "2026-06-04T13:29:33.387979"
+  },
+  {
+    "id": "4df3e22168f2",
+    "source": "搜索结果3",
+    "source_type": "file",
+    "title": "jeff bezos在最新活动中分享了人生经验和感悟",
+    "date_hint": null,
+    "agents": [
+      "06-timeline"
+    ],
+    "agent_scores": {
+      "01-writings": 0.0,
+      "02-conversations": 0.0,
+      "03-expression-dna": 0.0,
+      "04-external-views": 0.0,
+      "05-decisions": 0.0,
+      "06-timeline": 0.05555555555555555
+    },
+    "key_points": [],
+    "content_hash": "4df3e22168f2",
+    "content_preview": "jeff bezos在最新活动中分享了人生经验和感悟",
+    "ingested_at": "2026-06-04T13:29:33.396085"
+  }
+]
