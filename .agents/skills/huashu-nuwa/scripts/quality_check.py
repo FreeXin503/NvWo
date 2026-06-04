@@ -11,8 +11,13 @@
 """
 
 import sys
+import io
 import re
 from pathlib import Path
+
+# 解决 Windows 下的控制台编码问题
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
 
 def check_mental_models(content: str) -> tuple[bool, str]:
@@ -101,6 +106,35 @@ def check_primary_sources(content: str) -> tuple[bool, str]:
     return passed, f"一手来源占比: {primary}/{total} ({ratio:.0%}) {'✅' if passed else '❌ (应>50%)'}"
 
 
+def check_metadata_json(skill_path: Path) -> tuple[bool, str]:
+    """检查是否在 Skill 目录下生成了标准的 metadata.json 配置文件"""
+    # 假设 skill_path 是 [person]-perspective/SKILL.md，其父目录就是 skill_path.parent
+    metadata_file = skill_path.parent / 'metadata.json'
+    if not metadata_file.exists():
+        return False, "❌ 未找到 metadata.json"
+    
+    import json
+    try:
+        with open(metadata_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except Exception as e:
+        return False, f"❌ metadata.json 格式错误: {e}"
+        
+    required_fields = [
+        'name', 'english_name', 'description', 'system_prompt', 
+        'mental_models', 'decision_heuristics', 'expression_dna', 'anti_patterns'
+    ]
+    missing_fields = [field for field in required_fields if field not in data]
+    
+    if missing_fields:
+        return False, f"❌ metadata.json 缺失字段: {', '.join(missing_fields)}"
+        
+    if not isinstance(data.get('mental_models'), list) or len(data['mental_models']) == 0:
+        return False, "❌ metadata.json 的 mental_models 必须为非空数组"
+        
+    return True, "metadata.json 格式及核心字段完整 ✅"
+
+
 def main():
     if len(sys.argv) < 2:
         print("用法: python3 quality_check.py <SKILL.md路径>")
@@ -114,12 +148,13 @@ def main():
     content = skill_path.read_text(encoding='utf-8')
 
     checks = [
-        ("心智模型数量", check_mental_models),
-        ("模型局限性", check_limitations),
-        ("表达DNA辨识度", check_expression_dna),
-        ("诚实边界", check_honest_boundary),
-        ("内在张力", check_tensions),
-        ("一手来源占比", check_primary_sources),
+        ("心智模型数量", lambda c, p: check_mental_models(c)),
+        ("模型局限性", lambda c, p: check_limitations(c)),
+        ("表达DNA辨识度", lambda c, p: check_expression_dna(c)),
+        ("诚实边界", lambda c, p: check_honest_boundary(c)),
+        ("内在张力", lambda c, p: check_tensions(c)),
+        ("一手来源占比", lambda c, p: check_primary_sources(c)),
+        ("元数据JSON", lambda c, p: check_metadata_json(p)),
     ]
 
     print(f"质量检查: {skill_path.name}")
@@ -129,7 +164,7 @@ def main():
     total = len(checks)
 
     for name, check_fn in checks:
-        passed, detail = check_fn(content)
+        passed, detail = check_fn(content, skill_path)
         status = "✅ PASS" if passed else "❌ FAIL"
         print(f"  {name:<12} {status}  {detail}")
         if passed:
