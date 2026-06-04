@@ -1,0 +1,68 @@
+[
+  {
+    "id": "4a014300b7ba",
+    "source": "搜索结果1",
+    "source_type": "file",
+    "title": "charles munger近期发表了关于持续学习的讲话，强调自我提升的重要性",
+    "date_hint": null,
+    "agents": [
+      "06-timeline"
+    ],
+    "agent_scores": {
+      "01-writings": 0.0,
+      "02-conversations": 0.0,
+      "03-expression-dna": 0.0,
+      "04-external-views": 0.0,
+      "05-decisions": 0.0,
+      "06-timeline": 0.0
+    },
+    "key_points": [],
+    "content_hash": "4a014300b7ba",
+    "content_preview": "charles munger近期发表了关于持续学习的讲话，强调自我提升的重要性",
+    "ingested_at": "2026-06-04T11:09:51.963159"
+  },
+  {
+    "id": "bf322b75cfd0",
+    "source": "搜索结果2",
+    "source_type": "file",
+    "title": "charles munger提出了新的思维框架，强调实践与理论的结合",
+    "date_hint": null,
+    "agents": [
+      "01-writings"
+    ],
+    "agent_scores": {
+      "01-writings": 0.058823529411764705,
+      "02-conversations": 0.0,
+      "03-expression-dna": 0.0,
+      "04-external-views": 0.0,
+      "05-decisions": 0.0,
+      "06-timeline": 0.0
+    },
+    "key_points": [],
+    "content_hash": "bf322b75cfd0",
+    "content_preview": "charles munger提出了新的思维框架，强调实践与理论的结合",
+    "ingested_at": "2026-06-04T11:09:51.967569"
+  },
+  {
+    "id": "d4d8db2359d9",
+    "source": "搜索结果3",
+    "source_type": "file",
+    "title": "charles munger在最新活动中分享了人生经验和感悟",
+    "date_hint": null,
+    "agents": [
+      "06-timeline"
+    ],
+    "agent_scores": {
+      "01-writings": 0.0,
+      "02-conversations": 0.0,
+      "03-expression-dna": 0.0,
+      "04-external-views": 0.0,
+      "05-decisions": 0.0,
+      "06-timeline": 0.05555555555555555
+    },
+    "key_points": [],
+    "content_hash": "d4d8db2359d9",
+    "content_preview": "charles munger在最新活动中分享了人生经验和感悟",
+    "ingested_at": "2026-06-04T11:09:51.978321"
+  }
+]

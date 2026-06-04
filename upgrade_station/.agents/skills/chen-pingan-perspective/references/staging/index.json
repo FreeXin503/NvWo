@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ac44940ee2df",
+    "source": "手动输入",
+    "source_type": "paste",
+    "title": "陈平安在2024年新章节中，第十五次破碎后重建，领悟了新的剑道境界。他说：「我陈平安，剑在手中，道在心中。不为天下，只求心安。」标志着他的思想从护天下转变...",
+    "date_hint": null,
+    "agents": [
+      "01-writings"
+    ],
+    "agent_scores": {
+      "01-writings": 0.058823529411764705,
+      "02-conversations": 0.0,
+      "03-expression-dna": 0.0,
+      "04-external-views": 0.0,
+      "05-decisions": 0.0,
+      "06-timeline": 0.0
+    },
+    "key_points": [
+      "我陈平安，剑在手中，道在心中。不为天下，只求心安。"
+    ],
+    "content_hash": "ac44940ee2df",
+    "content_preview": "陈平安在2024年新章节中，第十五次破碎后重建，领悟了新的剑道境界。他说：「我陈平安，剑在手中，道在心中。不为天下，只求心安。」标志着他的思想从护天下转变为求心安。",
+    "ingested_at": "2026-06-04T10:43:05.232646"
+  },
+  {
+    "id": "54a4387ba69f",
+    "source": "手动输入",
+    "source_type": "paste",
+    "title": "陈平安在2024年新章节中，领悟了新的剑道境界。他说：「我陈平安，剑在手中，道在心中。」",
+    "date_hint": null,
+    "agents": [
+      "06-timeline"
+    ],
+    "agent_scores": {
+      "01-writings": 0.0,
+      "02-conversations": 0.0,
+      "03-expression-dna": 0.0,
+      "04-external-views": 0.0,
+      "05-decisions": 0.0,
+      "06-timeline": 0.0
+    },
+    "key_points": [
+      "我陈平安，剑在手中，道在心中。"
+    ],
+    "content_hash": "54a4387ba69f",
+    "content_preview": "陈平安在2024年新章节中，领悟了新的剑道境界。他说：「我陈平安，剑在手中，道在心中。」",
+    "ingested_at": "2026-06-04T10:49:16.719869"
+  }
+]
