@@ -61,18 +61,19 @@ description: |
 ✦ 进度数字是URL列表的实际统计，不是我自己估算的。
 
 ━━━ 检查点承诺 ━━━
-✦ Phase 1.5：我将运行 merge_research.py 脚本，只用脚本输出的
-  数字，不用我自己声称的数字。脚本数字 < 200 则返回继续采集。
+✦ Phase 0.9 前：我必须通过 run_command 运行 py -3 scripts/check_vpn.py 物理检测 VPN，未连通坚决暂停工作流。
+✦ Phase 1.5：我将运行 py -3 scripts/merge_research.py 脚本。我承诺如果总 URL 数量不达标或国外人物外网源占比不足，接受非零退出码强行阻断流程，绝不绕过。
 ✦ Phase 2.5：提炼摘要给用户确认后再构建。
-✦ Phase 4：验证通过后生成可用性说明书（Usability Card）。
+✦ Phase 3：构建结束时，不仅生成 SKILL.md，还会生成对齐的、机器可读的 metadata.json 配置文件供 AI 软件直接解析。
+✦ Phase 4：验证通过后生成可用性说明书（Usability Card），并运行 py -3 scripts/quality_check.py 验证 metadata.json 的完整性。
 ✦ Phase 5：精炼Agent输出 diff 格式改动，主Agent直接 apply。
 
 ━━━ 信息源承诺 ━━━
 [如果蒸馏对象是国外人物]:
-✦ 英文/原语言来源 ≥ 80%，中文来源 ≤ 20%。
-✦ 进入Phase 1前先检测VPN连接，失败则暂停并提醒开VPN。
+✦ 英文/原语言来源（外网源）占比 ≥ 80%，中文来源 ≤ 20%。
+✦ 进入Phase 1前运行 check_vpn.py，未开启或无法访问则直接暂停并提醒开VPN。
 [如果蒸馏对象是中国人物]:
-✦ 国内来源 ≤ 75%，必须包含 ≥ 25% 国外视角来源。
+✦ 国内来源 ≤ 75%，必须包含 ≥ 25% 国外视角（外网源）来源。
 ✦ Agent 4（他者）和 Agent 7（思想体系）必须包含英文检索。
 [通用]:
 ✦ 黑名单：知乎普通问答、微信公众号非权威来源、百度百科、百度知道——永远排除。
@@ -233,6 +234,16 @@ description: |
 **关键规则**：
 - 每个subagent必须把调研结果写入对应的md文件。不存文件的调研等于没做。
 - **所有调研文件必须存在skill目录内部**（`references/research/`），绝对不要存到 `07-调研与分析/` 或其他外部目录。Skill必须是自包含的——复制整个skill目录就能独立使用，不依赖任何外部文件。这是为开源分发设计的核心原则。
+- **强制在此阶段生成调研元数据 `references/research/metadata.json` 配置文件**。格式如下：
+  ```json
+  {
+    "name": "charlie-munger",
+    "chinese_name": "查理·芒格",
+    "is_foreign": true,
+    "primary_language": "en"
+  }
+  ```
+  若为中国人物，`is_foreign` 必须为 `false`。该文件是统计脚本运行的核心依据，必须真实写入。
 
 ---
 
@@ -297,6 +308,18 @@ description: |
    - 弱模型在一次性处理大量文本时极易发生内存溢出（Context Out of Memory）或幻觉。
    - **你必须采取“即搜即写”的增量写入策略**：每通过搜索获取 5-10 篇资料，就立即把提炼的信息写入对应的 `references/research/*.md` 文件中，绝对不能等到最后才一次性写入。
    - 每次写入时，在文件末尾追加最新的参考来源 URL 与标题，保持引用列表与实际计数完全同步。
+
+---
+
+### 🌐 Phase 0.9: 强制外网与 VPN 物理检测
+
+在启动任何 Search Agent 之前，主 Agent **必须首先通过运行命令物理检测外网连接连通性**。
+运行以下命令：
+```powershell
+py -3 .agents/skills/huashu-nuwa/scripts/check_vpn.py
+```
+- **如果命令执行失败并返回非零退出码**：主 Agent 必须立即停止工作流，并将脚本报错内容打印给用户，要求用户开启网络代理后重试，坚决不可强行推进国外人物蒸馏。
+- **如果命令成功返回（退出码 0）**：方可继续往下进入 Phase 1。
 
 ---
 
